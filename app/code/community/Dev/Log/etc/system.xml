@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <dev>
+            <groups>
+                <devlog translate="label">
+                    <label>Dev Log Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>45</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        
+                        <format>
+                            <label>Log Format</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>"%timestamp% %title%: %message%" or "%timestamp% %priorityName% (%priority%): %message%"</comment>
+                        </format>
+                        
+                        <timestamp>
+                            <label>Timestamp Format</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>"Y-m-d H:i" or "H:i" or "c"</comment>
+                        </timestamp>
+                        
+                        <logfile_name translate="label">
+                            <label>Log File Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><logfile>1</logfile></depends>
+                        </logfile_name>
+                        
+                        <firebug translate="label">
+                            <label>Log to FireBug</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>needs FirePHP Addon</comment>
+                        </firebug>
+                        
+                        <browser translate="label">
+                            <label>Log to Browser</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </browser>
+
+                    </fields>
+                </devlog>
+            </groups>
+        </dev>
+    </sections>
+</config>

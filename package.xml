@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+    <name>Dev_Log</name>
+    <version>0.1.2</version>
+    <stability>alpha</stability>
+    <license>OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Developer Module changes Mage::log() output.</summary>
+    <description>Alpha Developer Module changes Mage::log() output.&#xD;
+&#xD;
+You have to comment out, the print_r line in Mage.php:&#xD;
+&#xD;
+if (is_array($message) || is_object($message)) {&#xD;
+    //$message = print_r($message, true);&#xD;
+}</description>
+    <notes>New Developer Module</notes>
+    <authors><author><name>Anja Vogel</name><user>magentinchen</user><email>mail@anjavogel.com</email></author></authors>
+    <date>2012-03-04</date>
+    <time>11:59:44</time>
+    <contents><target name="magecommunity"><dir name="Dev"><dir name="Log"><dir name="Helper"><file name="Data.php" hash="18885567aac4181dc78b163556ff5da8"/></dir><dir name="Model"><dir name="Formatter"><file name="Firebug.php" hash="0e14df64517d0597d19bd3be7933ced2"/><file name="Simple.php" hash="644d589a5b310508e5161a5b01699d0c"/></dir><file name="Observer.php" hash="95473310dfb16b012dc511400d89166e"/><dir name="Writer"><file name="Browser.php" hash="e7aa0e026ebff772db55cc47f823c048"/><file name="Firebug.php" hash="07f4b97950932fa1f01117411a952d1f"/><file name="Stream.php" hash="f945aa37318034ac09be8e309be8dc80"/></dir></dir><dir name="controllers"><file name="LogController.php" hash="907091d219be88200dc8401f86338691"/></dir><dir name="etc"><file name="config.xml" hash="6cfea948b0b5287e3dd5ba52eebca29d"/><file name="system.xml" hash="25b36bccd5c1d6247e5e438712b5c63c"/></dir></dir></dir><dir name="."><file name="Dev.php" hash="a731ade9f9f5a5a26f3ceb5fe7d918c2"/></dir></target><target name="mageetc"><dir name="modules"><file name="Dev_Log.xml" hash="4308bc01dc2838e212921ef3fdd604f0"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="dev"><file name="log.phtml" hash="dd8c5524e51f645a8fe1fd8dd521797c"/></dir></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="dev"><file name="log.phtml" hash="dd8c5524e51f645a8fe1fd8dd521797c"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

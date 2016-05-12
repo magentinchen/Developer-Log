@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Dev_Log>
+            <version>0.1.3</version>
+        </Dev_Log>
+    </modules>
+    <global>
+        <log>
+            <core>
+                <!--  <writer_model>Dev_Log_Model_Writer_Firebug</writer_model>-->
+                <writer_model>Dev_Log_Model_Writer_Stream</writer_model>
+            </core>
+        </log>
+        <models>
+            <devlog>
+                <class>Dev_Log_Model</class>
+            </devlog>
+        </models>
+        <helpers>
+            <devlog>
+                <class>Dev_Log_Helper</class>
+            </devlog>
+        </helpers>
+        
+        <events>
+            <resource_get_tablename>
+                <observers>
+                    <init_devlog>
+                        <class>devlog/observer</class>
+                        <method>initDevlog</method>
+                    </init_devlog>
+                </observers>
+            </resource_get_tablename>
+        </events>
+        
+    </global>
+    <frontend>
+        <routers>
+            <devlog>
+                <use>standard</use>
+                <args>
+                    <module>Dev_Log</module>
+                    <frontName>dev</frontName>
+                </args>
+            </devlog>
+        </routers>
+    </frontend>
+    <default>
+        <dev>
+            <devlog>
+                <format>%timestamp% %title%: %message%</format>
+                <timestamp>Y-m-d H:i</timestamp>
+                <logfile_name>dev.log</logfile_name>
+                <firebug>0</firebug>
+                <browser>0</browser>
+                <browseradditional>pre</browseradditional>
+            </devlog>
+        </dev>
+    </default>
+</config>
+
