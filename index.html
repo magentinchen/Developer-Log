@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Developer-log by magentinchen</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Developer-log</h1>
+        <p>Magento 1.x Modul</p>
+
+        <p class="view"><a href="https://github.com/magentinchen/Developer-Log">View the Project on GitHub <small>magentinchen/Developer-Log</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/magentinchen/Developer-Log/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/magentinchen/Developer-Log/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/magentinchen/Developer-Log">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a id="beispiele-zur-nutzung" class="anchor" href="#beispiele-zur-nutzung" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Beispiele zur Nutzung</h3>
+
+<ul>
+<li>Dev::log(FALSE);</li>
+<li>Dev::log(TRUE);</li>
+<li>Dev::log(NULL);</li>
+<li>Dev::log(0);</li>
+<li>Dev::log('');</li>
+<li>Dev::log(array());</li>
+<li>Dev::log(array('a', 'b', 'c'));</li>
+<li>Dev::log(array('a' =&gt; 'a', 'b' =&gt; 'b', 'c' =&gt; 'c'));</li>
+<li>Dev::log(Mage::app()-&gt;getStore());</li>
+<li>Dev::log(Mage::app()-&gt;getLayout()-&gt;getAllBlocks());</li>
+<li>Dev::log(Mage::helper('catalog/category')-&gt;getStoreCategories()-&gt;getNodes());<br>
+</li>
+<li>Dev::log(Mage::getModel('catalog/product')-&gt;load(1));</li>
+<li>Dev::log(Mage::getModel('catalog/product')-&gt;load(1)-&gt;getResource());</li>
+<li>Dev::log(Mage::app()-&gt;getConfig()-&gt;getNode('default/design')-&gt;asNiceXml());</li>
+<li>Dev::log('&lt;?xml version="1.0"?&gt;' . Mage::app()-&gt;getConfig()-&gt;getNode('default/design')-&gt;asXml());</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/magentinchen">magentinchen</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

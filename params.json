@@ -1,0 +1,6 @@
+{
+  "name": "Developer-log",
+  "tagline": "Magento 1.x Modul",
+  "body": "### Beispiele zur Nutzung\r\n\r\n* Dev::log(FALSE);\r\n* Dev::log(TRUE);\r\n* Dev::log(NULL);\r\n* Dev::log(0);\r\n* Dev::log('');\r\n* Dev::log(array());\r\n* Dev::log(array('a', 'b', 'c'));\r\n* Dev::log(array('a' => 'a', 'b' => 'b', 'c' => 'c'));\r\n* Dev::log(Mage::app()->getStore());\r\n* Dev::log(Mage::app()->getLayout()->getAllBlocks());\r\n* Dev::log(Mage::helper('catalog/category')->getStoreCategories()->getNodes());       \r\n* Dev::log(Mage::getModel('catalog/product')->load(1));\r\n* Dev::log(Mage::getModel('catalog/product')->load(1)->getResource());\r\n* Dev::log(Mage::app()->getConfig()->getNode('default/design')->asNiceXml());\r\n* Dev::log('<?xml version=\"1.0\"?>' . Mage::app()->getConfig()->getNode('default/design')->asXml());",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
