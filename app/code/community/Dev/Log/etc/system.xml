@@ -11,7 +11,6 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        
                         <format>
                             <label>Log Format</label>
                             <frontend_type>text</frontend_type>
@@ -21,7 +20,6 @@
                             <show_in_store>1</show_in_store>
                             <comment>"%timestamp% %title%: %message%" or "%timestamp% %priorityName% (%priority%): %message%"</comment>
                         </format>
-                        
                         <timestamp>
                             <label>Timestamp Format</label>
                             <frontend_type>text</frontend_type>
@@ -31,7 +29,6 @@
                             <show_in_store>1</show_in_store>
                             <comment>"Y-m-d H:i" or "H:i" or "c"</comment>
                         </timestamp>
-                        
                         <logfile_name translate="label">
                             <label>Log File Name</label>
                             <frontend_type>text</frontend_type>
@@ -41,7 +38,6 @@
                             <show_in_store>1</show_in_store>
                             <depends><logfile>1</logfile></depends>
                         </logfile_name>
-                        
                         <firebug translate="label">
                             <label>Log to FireBug</label>
                             <frontend_type>select</frontend_type>
@@ -52,7 +48,6 @@
                             <show_in_store>1</show_in_store>
                             <comment>needs FirePHP Addon</comment>
                         </firebug>
-                        
                         <browser translate="label">
                             <label>Log to Browser</label>
                             <frontend_type>select</frontend_type>
@@ -62,7 +57,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </browser>
-
                     </fields>
                 </devlog>
             </groups>
