@@ -22,7 +22,6 @@
                 <class>Dev_Log_Helper</class>
             </devlog>
         </helpers>
-        
         <events>
             <resource_get_tablename>
                 <observers>
@@ -33,7 +32,6 @@
                 </observers>
             </resource_get_tablename>
         </events>
-        
     </global>
     <frontend>
         <routers>
@@ -59,4 +57,3 @@
         </dev>
     </default>
 </config>
-
