@@ -34,7 +34,7 @@
         </events>
     </global>
     <frontend>
-        <routers>
+        <!--><routers>
             <devlog>
                 <use>standard</use>
                 <args>
@@ -42,7 +42,7 @@
                     <frontName>dev</frontName>
                 </args>
             </devlog>
-        </routers>
+        </routers>-->
     </frontend>
     <default>
         <dev>

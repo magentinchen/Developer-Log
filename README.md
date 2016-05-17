@@ -52,6 +52,7 @@ XML wird - falls erkannt - formatiert und Leerwerte unterschieden und sichtbar g
 * Log Settings: Enabled - wird verwendet
 * Log Format, z.B. "%timestamp% %title%: %message%"
 * Timestamp Format, z.B. "Y-m-d H:i"
+* Log File Name, z.B. dev.log, system.log oder ...
 * Log to Browser (selten sinnvoll)
 * Log to Firebug (benötigt FirePHP Addon)
 
@@ -59,3 +60,17 @@ XML wird - falls erkannt - formatiert und Leerwerte unterschieden und sichtbar g
 ### Log-Datei
 
 * var/log/dev.log
+
+
+### Tipps
+
+Zu den Paramatern in Mage::log() ist an zweiter Stelle ein Titel hinzugekommen, alle anderen Parameter sind gleich. Gerne verwende ich __METHOD__ und __FILE__:
+* Dev::log($mixed, __METHOD__); oder out($mixed, __METHOD__);
+* Dev::log($mixed, __FILE__); oder out($mixed, __FILE__);
+
+Ausgaben im Terminal automatisch verfolgen:
+* tail -f var/log/dev.log
+* tail -f var/log/*.log
+
+Live Logging mit Firebug und "Allowed IPs" Einschränkung möglich.
+
