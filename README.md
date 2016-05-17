@@ -64,9 +64,9 @@ XML wird - falls erkannt - formatiert und Leerwerte unterschieden und sichtbar g
 
 ### Tipps
 
-Zu den Paramatern in Mage::log() ist an zweiter Stelle ein Titel hinzugekommen, alle anderen Parameter sind gleich. Gerne verwende ich __METHOD__ und __FILE__:
-* Dev::log($mixed, __METHOD__); oder out($mixed, __METHOD__);
-* Dev::log($mixed, __FILE__); oder out($mixed, __FILE__);
+Zu den Paramatern in Mage::log() ist an zweiter Stelle ein Titel hinzugekommen, alle anderen Parameter sind gleich. Gerne verwende ich _ _ METHOD _ _ und _ _ FILE _ _:
+* Dev::log($mixed, __ METHOD __); oder out($mixed, __ METHOD __);
+* Dev::log($mixed, __ FILE __); oder out($mixed, __ FILE __);
 
 Ausgaben im Terminal automatisch verfolgen:
 * tail -f var/log/dev.log
