@@ -37,7 +37,7 @@ class Dev
         self::out($message, $level, $file, $forceLog);
     }
 
-    public static function out($message, $level, $file, $forceLog)
+    public static function out($message, $level = null, $file = null, $forceLog = false)
     {        
         if (!Mage::getConfig()) {
             return;

@@ -6,15 +6,8 @@
     <license>OSL</license>
     <channel>community</channel>
     <extends/>
-    <summary>Developer Module changes Mage::log() output.</summary>
-    <description>Alpha Developer Module changes Mage::log() output.&#xD;
-&#xD;
-You have to comment out, the print_r line in Mage.php:&#xD;
-&#xD;
-if (is_array($message) || is_object($message)) {&#xD;
-    //$message = print_r($message, true);&#xD;
-}</description>
-    <notes>New Developer Module</notes>
+    <summary>Developer Logging Module</summary>
+    <description>Use Dev::log($mixed);</description>
     <authors><author><name>Anja Vogel</name><user>magentinchen</user><email>mail@anjavogel.com</email></author></authors>
     <date>2012-03-04</date>
     <time>11:59:44</time>

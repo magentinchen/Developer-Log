@@ -27,7 +27,8 @@ XML wird - falls erkannt - formatiert und Leerwerte unterschieden und sichtbar g
 * Dev::log(Mage::app()->getConfig()->getNode('default/design')->asNiceXml());
 * Dev::log('<?xml version="1.0"?>' . Mage::app()->getConfig()->getNode('default/design')->asXml());
 
-#### Für Schreibfaule
+
+### Variante für Schreibfaule
 
 * out(FALSE);
 * out(TRUE);
@@ -64,7 +65,8 @@ XML wird - falls erkannt - formatiert und Leerwerte unterschieden und sichtbar g
 
 ### Tipps
 
-Zu den Paramatern in Mage::log() ist an zweiter Stelle ein Titel hinzugekommen, alle anderen Parameter sind gleich. Gerne verwende ich __ METHOD __ und __ FILE __:
+Zu den Paramatern in Mage::log() ist an zweiter Stelle ein Titel hinzugekommen, alle anderen Parameter sind gleich. 
+Gerne verwende ich __ METHOD __ und __ FILE __:
 * Dev::log($mixed, __ METHOD __ ); oder out($mixed, __ METHOD __ );
 * Dev::log($mixed, __ FILE __ ); oder out($mixed, __ FILE __ );
 
@@ -73,4 +75,3 @@ Ausgaben im Terminal automatisch verfolgen:
 * tail -f var/log/*.log
 
 Live Logging mit Firebug und "Allowed IPs" Einschränkung möglich.
-
