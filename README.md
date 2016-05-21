@@ -1,6 +1,6 @@
-# Developer-Log * Modul Dev_Log
+# Developer-Log: Magento Modul Dev_Log
 
-## Extension für Magento 1.x.
+## Magento 1.x Extension
 
 Nach dem Vorbild von Mage::log() wurde Dev::log() entwickelt, um möglichst alles loggen zu können, insbesondere Magento-Objekte und Arrays mit Objekten.
 Versucht man dies mit Mage::log() wird man des öfteren eine weiße Seite zu Gesicht bekommen.
@@ -17,8 +17,6 @@ XML wird - falls erkannt - formatiert und Leerwerte unterschieden und sichtbar g
     Dev::log(0);
     Dev::log('');
     Dev::log(array());
-    Dev::log(array('a', 'b', 'c'));
-    Dev::log(array('a' => 'a', 'b' => 'b', 'c' => 'c'));
     Dev::log(Mage::app()->getStore());
     Dev::log(Mage::app()->getLayout()->getAllBlocks());
     Dev::log(Mage::helper('catalog/category')->getStoreCategories()->getNodes());       
@@ -28,7 +26,7 @@ XML wird - falls erkannt - formatiert und Leerwerte unterschieden und sichtbar g
     Dev::log('<?xml version="1.0"?>' . Mage::app()->getConfig()->getNode('default/design')->asXml());
 
 
-### Variante für Schreibfaule
+### Kurze Variante
 
     out(FALSE);
     out(TRUE);
@@ -36,8 +34,6 @@ XML wird - falls erkannt - formatiert und Leerwerte unterschieden und sichtbar g
     out(0);
     out('');
     out(array());
-    out(array('a', 'b', 'c'));
-    out(array('a' => 'a', 'b' => 'b', 'c' => 'c'));
     out(Mage::app()->getStore());
     out(Mage::app()->getLayout()->getAllBlocks());
     out(Mage::helper('catalog/category')->getStoreCategories()->getNodes());       
