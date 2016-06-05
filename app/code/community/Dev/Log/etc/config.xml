@@ -6,12 +6,6 @@
         </Dev_Log>
     </modules>
     <global>
-        <log>
-            <core>
-                <!--  <writer_model>Dev_Log_Model_Writer_Firebug</writer_model>-->
-                <writer_model>Dev_Log_Model_Writer_Stream</writer_model>
-            </core>
-        </log>
         <models>
             <devlog>
                 <class>Dev_Log_Model</class>
