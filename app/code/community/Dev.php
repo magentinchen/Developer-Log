@@ -8,9 +8,9 @@
 class Dev
 {
     const TRACE = 'TRACE';
-    
+
     /**
-     * Wrapper for Mage::log() with title
+     * Similar like Mage::log(), with title
      *
      * @param string $message
      * @param string $title
@@ -18,10 +18,24 @@ class Dev
      */
     public static function log($message, $title = '', $level = null, $file = null, $forceLog = false)
     {
-        if (empty($file)) {
-            $file = Mage::getStoreConfig('dev/devlog/logfile_name');
+        if (!Mage::getConfig()) {
+            return;
         }
-                
+
+        try {
+            $logActive = Mage::getStoreConfig('dev/log/active');
+            if (empty($file)) {
+                $file = Mage::getStoreConfig('dev/devlog/logfile_name');
+            }
+        } catch (Exception $e) {
+            $logActive = true;
+        }
+
+        if (!Mage::getIsDeveloperMode() && !$logActive && !$forceLog) {
+            return;
+        }
+
+
         // title
         $devlogTitle = Mage::registry('devlog_title');
 
@@ -33,38 +47,15 @@ class Dev
             $devlogTitle->setTitle($title);
         }
 
-        // log
-        self::out($message, $level, $file, $forceLog);
-    }
-
-    public static function out($message, $level = null, $file = null, $forceLog = false)
-    {        
-        if (!Mage::getConfig()) {
-            return;
-        }
-
-        try {
-            $logActive = Mage::getStoreConfig('dev/log/active');
-            if (empty($file)) {
-                $file = Mage::getStoreConfig('dev/log/file');
-            }
-        }
-        catch (Exception $e) {
-            $logActive = true;
-        }
-
-        if (!Mage::getIsDeveloperMode() && !$logActive && !$forceLog) {
-            return;
-        }
 
         static $loggers = array();
 
-        $level  = is_null($level) ? Zend_Log::DEBUG : $level;
+        $level = is_null($level) ? Zend_Log::DEBUG : $level;
         $file = empty($file) ? 'system.log' : $file;
 
         try {
             if (!isset($loggers[$file])) {
-                $logDir  = Mage::getBaseDir('var') . DS . 'log';
+                $logDir = Mage::getBaseDir('var') . DS . 'log';
                 $logFile = $logDir . DS . $file;
 
                 if (!is_dir($logDir)) {
@@ -77,22 +68,17 @@ class Dev
                     chmod($logFile, 0644);
                 }
 
-                $format = '%timestamp% %priorityName% (%priority%): %message%' . PHP_EOL;
-                $formatter = new Zend_Log_Formatter_Simple($format);
-                $writerModel = (string)Mage::getConfig()->getNode('global/log/core/writer_model');
-                if (!Mage::app() || !$writerModel) {
-                    $writer = new Zend_Log_Writer_Stream($logFile);
-                }
-                else {
-                    $writer = new $writerModel($logFile);
-                }
+                $format = Mage::getStoreConfig('dev/devlog/format'); // . PHP_EOL;
+                $formatter = new Dev_Log_Model_Formatter_Simple($format);
+                $writer = new Dev_Log_Model_Writer_Stream($logFile);
+
                 $writer->setFormatter($formatter);
                 $loggers[$file] = new Zend_Log($writer);
             }
 
             $loggers[$file]->log($message, $level);
-        }
-        catch (Exception $e) {
+
+        } catch (Exception $e) {
         }
     }
 
