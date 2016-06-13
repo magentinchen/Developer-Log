@@ -9,6 +9,9 @@ class Dev
 {
     const TRACE = 'TRACE';
 
+    static $count = 0;
+    static $loggers = array();
+
     /**
      * Similar like Mage::log(), with title
      *
@@ -47,14 +50,14 @@ class Dev
             $devlogTitle->setTitle($title);
         }
 
+        self::$count++;
 
-        static $loggers = array();
 
         $level = is_null($level) ? Zend_Log::DEBUG : $level;
         $file = empty($file) ? 'system.log' : $file;
 
         try {
-            if (!isset($loggers[$file])) {
+            if (!isset(self::$loggers[$file])) {
                 $logDir = Mage::getBaseDir('var') . DS . 'log';
                 $logFile = $logDir . DS . $file;
 
@@ -73,15 +76,14 @@ class Dev
                 $writer = new Dev_Log_Model_Writer_Stream($logFile);
 
                 $writer->setFormatter($formatter);
-                $loggers[$file] = new Zend_Log($writer);
+                self::$loggers[$file] = new Zend_Log($writer);
             }
 
-            $loggers[$file]->log($message, $level);
+            self::$loggers[$file]->log($message, $level);
 
         } catch (Exception $e) {
         }
     }
 
 }
-
 

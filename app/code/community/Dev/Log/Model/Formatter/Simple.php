@@ -49,7 +49,7 @@ class Dev_Log_Model_Formatter_Simple extends Zend_Log_Formatter_Simple implement
             $event['timestamp'] = date($format);
         }
         $event['message'] = parent::format($event);
-
+        $event['message'] = trim(str_replace("%count%", Dev::$count, $event['message']));
         $event['message'] = trim(str_replace("%title%", Mage::helper('devlog')->getTitle(), $event['message']));
 
         return $event;

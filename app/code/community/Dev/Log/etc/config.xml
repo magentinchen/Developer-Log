@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Dev_Log>
-            <version>0.1.5</version>
+            <version>0.1.7</version>
         </Dev_Log>
     </modules>
     <global>
@@ -30,7 +30,7 @@
     <default>
         <dev>
             <devlog>
-                <format>%timestamp% %title%: %message%</format>
+                <format>%count%) %timestamp% %title%: %message%</format>
                 <timestamp>Y-m-d H:i</timestamp>
                 <logfile_name>dev.log</logfile_name>
                 <firebug>0</firebug>
